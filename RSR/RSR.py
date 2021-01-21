@@ -68,7 +68,7 @@ def rsr(data, weight=None, threshold=None, full_rank=True):
 
 def rsr_analysis(data, file_name=None, **kwargs):
     Result, Distribution = rsr(data, **kwargs)
-    file_name = 'RSR分析结果报告.xlsx' if file_name is None else file_name + '.xlsx'
+    file_name = 'RSR.xlsx' if file_name is None else file_name + '.xlsx'
     Excel_Writer = pd.ExcelWriter(file_name)
     Result.to_excel(Excel_Writer, '综合评价结果')
     Result.sort_values(by='Level', ascending=False).to_excel(Excel_Writer, '分档排序结果')
@@ -87,4 +87,5 @@ if __name__ == '__main__':
     df["孕妇死亡率"] = 1 / df["孕妇死亡率"]
     df["围产儿死亡率"] = 1 / df["围产儿死亡率"]
     rsr(df)
+    rsr_analysis(df)
     # rsr(df, threshold = [2, 3, 4, 5 ,6])
