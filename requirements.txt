@@ -4,3 +4,4 @@ matplotlib
 seaborn
 scipy
 statsmodels
+openpyxl
