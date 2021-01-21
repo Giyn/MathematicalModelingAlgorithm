@@ -108,6 +108,14 @@ def gra(dataframe):
 
 
 def show_gra_heatmap(df):
+    """
+
+    show heatmap of gray relational analysis
+
+    Args:
+        df: dataframe
+
+    """
     colormap = plt.cm.RdBu
     y_labels = df.columns.values.tolist()
     f, ax = plt.subplots(figsize=(14, 14))
